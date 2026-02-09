@@ -24,7 +24,7 @@ Start the SQL Server container by running the following command:
 
 ```bash
 docker run -e "ACCEPT_EULA=Y" \
-           -e "SA_PASSWORD=sg1skeA*63R87r@n6C" \
+           -e "SA_PASSWORD=password" \
            -p 1433:1433 \
            -v sql_data:/var/opt/mssql \
            --name sqlserver \
@@ -55,7 +55,7 @@ services:
     platform: linux/amd64
     container_name: sqlserver
     environment:
-      SA_PASSWORD: "sg1skeA*63R87r@n6C"
+      SA_PASSWORD: "password"
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
@@ -107,7 +107,7 @@ docker exec -it sqlserver bash
 Once inside the container, connect to SQL Server with:
 
 ```bash
-/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'sg1skeA*63R87r@n6C' -C
+/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'password' -C
 ```
 
 Now, you can run SQL queries directly in the SQL Server CLI.
@@ -154,7 +154,7 @@ You can also run SQL queries without entering the container's shell. For a quick
 
 ```bash
 docker exec -it sqlserver \
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'sg1skeA*63R87r@n6C' \
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'password' \
 -Q "SELECT @@VERSION"
 ```
 
@@ -172,7 +172,7 @@ Configure the connection with the following settings:
 Profile: salmanzebmalik
 Server: localhost
 User: sa
-Password: sg1skeA*63R87r@n6C
+Password: password
 Port: 1433
 ```
 
