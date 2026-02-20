@@ -154,7 +154,7 @@ You can also run SQL queries without entering the container's shell. For a quick
 
 ```bash
 docker exec -it sqlserver \
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'password' \
+/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'password' -C \
 -Q "SELECT @@VERSION"
 ```
 
